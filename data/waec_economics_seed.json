@@ -1,0 +1,642 @@
+{
+  "exam_body": "WAEC",
+  "subject": "Economics",
+  "level": "SSCE",
+  "topics": [
+    {
+      "order": 1,
+      "title": "Definition and Scope of Economics",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Scarcity and Choice",
+          "keywords": ["scarcity", "choice", "scale of preference", "opportunity cost", "production possibility curve"]
+        },
+        {
+          "order": 2,
+          "title": "Economic Activities",
+          "keywords": ["production", "distribution", "consumption"]
+        },
+        {
+          "order": 3,
+          "title": "Classification of Economic Activities",
+          "keywords": ["primary", "secondary", "tertiary", "output", "income", "employment", "savings", "foreign exchange"]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Factors of Production",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Land",
+          "keywords": ["land", "natural resources", "characteristics of land", "importance of land"]
+        },
+        {
+          "order": 2,
+          "title": "Labour",
+          "keywords": ["labour", "human effort", "characteristics of labour", "importance of labour"]
+        },
+        {
+          "order": 3,
+          "title": "Capital",
+          "keywords": ["capital", "man-made resources", "characteristics of capital", "importance of capital"]
+        },
+        {
+          "order": 4,
+          "title": "Entrepreneurship",
+          "keywords": ["entrepreneurship", "entrepreneur", "risk-bearing", "characteristics", "importance"]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Types and Basic Features of Economic Systems",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Capitalism",
+          "keywords": ["capitalism", "free market", "private ownership", "advantages", "disadvantages"]
+        },
+        {
+          "order": 2,
+          "title": "Socialism",
+          "keywords": ["socialism", "state ownership", "planned economy", "advantages", "disadvantages"]
+        },
+        {
+          "order": 3,
+          "title": "Mixed Economy",
+          "keywords": ["mixed economy", "public sector", "private sector", "advantages", "disadvantages"]
+        },
+        {
+          "order": 4,
+          "title": "Economic Problems and Solutions Under Each System",
+          "keywords": ["what to produce", "how to produce", "for whom to produce", "economic problems"]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Basic Tools of Economic Analysis",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Tables, Graphs and Charts",
+          "keywords": ["tables", "graphs", "charts", "data representation"]
+        },
+        {
+          "order": 2,
+          "title": "Statistical Measures",
+          "keywords": ["arithmetic mean", "median", "mode", "statistical applications"]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "Demand",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Concept of Demand and Law of Demand",
+          "keywords": ["demand", "law of demand", "demand schedule", "demand curve", "exceptional demand curves"]
+        },
+        {
+          "order": 2,
+          "title": "Types of Demand",
+          "keywords": ["derived demand", "composite demand", "joint demand", "competitive demand"]
+        },
+        {
+          "order": 3,
+          "title": "Factors Determining Demand",
+          "keywords": ["price", "income", "tastes", "price of other commodities", "price expectation", "determinants of demand"]
+        },
+        {
+          "order": 4,
+          "title": "Shift of vs Movement Along the Demand Curve",
+          "keywords": ["shift of demand curve", "movement along demand curve", "extension", "contraction"]
+        },
+        {
+          "order": 5,
+          "title": "Elasticity of Demand",
+          "keywords": ["price elasticity", "income elasticity", "cross elasticity", "measurement", "importance of elasticity"]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "title": "Supply",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Concept of Supply and Law of Supply",
+          "keywords": ["supply", "law of supply", "supply schedule", "supply curve"]
+        },
+        {
+          "order": 2,
+          "title": "Types of Supply",
+          "keywords": ["composite supply", "complementary supply", "competitive supply"]
+        },
+        {
+          "order": 3,
+          "title": "Factors Determining Supply",
+          "keywords": ["input prices", "technology", "prices of other commodities", "climatic factors", "determinants of supply"]
+        },
+        {
+          "order": 4,
+          "title": "Shift of vs Movement Along the Supply Curve",
+          "keywords": ["shift of supply curve", "movement along supply curve", "extension of supply", "contraction of supply"]
+        },
+        {
+          "order": 5,
+          "title": "Elasticity of Supply",
+          "keywords": ["elasticity of supply", "measurement of supply elasticity", "importance to producers", "importance to government"]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "title": "Theory of Consumer Behaviour",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Utility Concepts",
+          "keywords": ["total utility", "average utility", "marginal utility", "utility schedules"]
+        },
+        {
+          "order": 2,
+          "title": "Law of Diminishing Marginal Utility",
+          "keywords": ["diminishing marginal utility", "total utility", "marginal utility relationship"]
+        },
+        {
+          "order": 3,
+          "title": "Consumer Equilibrium",
+          "keywords": ["consumer equilibrium", "utility maximization", "effects of price changes"]
+        },
+        {
+          "order": 4,
+          "title": "Marginal Utility and the Demand Curve",
+          "keywords": ["marginal utility", "demand curve", "relationship"]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "title": "Theory of Price Determination",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Concept of the Market",
+          "keywords": ["market", "interaction", "demand and supply"]
+        },
+        {
+          "order": 2,
+          "title": "Price Determination Under Free and Regulated Markets",
+          "keywords": ["free market", "regulated market", "price determination"]
+        },
+        {
+          "order": 3,
+          "title": "Equilibrium Price and Quantity",
+          "keywords": ["equilibrium price", "equilibrium quantity", "product market", "factor market"]
+        },
+        {
+          "order": 4,
+          "title": "Effects of Changes in Supply and Demand",
+          "keywords": ["shift in demand", "shift in supply", "effects on equilibrium"]
+        },
+        {
+          "order": 5,
+          "title": "Algebraic Determination of Equilibrium",
+          "keywords": ["algebraic", "equilibrium price", "equilibrium quantity", "equations"]
+        },
+        {
+          "order": 6,
+          "title": "Price Controls",
+          "keywords": ["maximum price", "minimum price", "price ceiling", "price floor", "rationing", "black market", "parallel market"]
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "title": "Theory of Production",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Division of Labour and Specialization",
+          "keywords": ["division of labour", "specialization", "advantages", "disadvantages"]
+        },
+        {
+          "order": 2,
+          "title": "Scale of Production",
+          "keywords": ["internal economies", "external economies", "diseconomies of scale"]
+        },
+        {
+          "order": 3,
+          "title": "Productivity Concepts and Law of Variable Proportions",
+          "keywords": ["total productivity", "average productivity", "marginal productivity", "law of variable proportions", "law of diminishing returns"]
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "title": "Theory of Cost and Revenue",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Cost Concepts",
+          "keywords": ["total cost", "average cost", "marginal cost", "variable cost", "fixed cost", "short run", "long run"]
+        },
+        {
+          "order": 2,
+          "title": "Economist's vs Accountant's View of Cost",
+          "keywords": ["opportunity cost", "money cost", "explicit cost", "implicit cost"]
+        },
+        {
+          "order": 3,
+          "title": "Revenue Concepts",
+          "keywords": ["total revenue", "average revenue", "marginal revenue", "marginal revenue product"]
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "title": "Market Structures",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Perfect Competition",
+          "keywords": ["perfect competition", "characteristics", "price determination", "output determination"]
+        },
+        {
+          "order": 2,
+          "title": "Monopoly",
+          "keywords": ["monopoly", "characteristics", "price determination", "output determination"]
+        },
+        {
+          "order": 3,
+          "title": "Monopolistic Competition",
+          "keywords": ["monopolistic competition", "characteristics", "price determination", "product differentiation"]
+        },
+        {
+          "order": 4,
+          "title": "Price Discrimination",
+          "keywords": ["price discrimination", "types", "conditions", "effects"]
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "title": "Business Organizations",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Types of Business Enterprises",
+          "keywords": ["sole proprietorship", "partnership", "joint-stock company", "cooperative", "statutory corporation", "joint venture"]
+        },
+        {
+          "order": 2,
+          "title": "Sources of Funds",
+          "keywords": ["sources of capital", "retained earnings", "loans", "shares", "debentures"]
+        },
+        {
+          "order": 3,
+          "title": "Problems of Business Enterprises",
+          "keywords": ["business problems", "finance", "management", "competition"]
+        },
+        {
+          "order": 4,
+          "title": "Privatization, Commercialization, Indigenization and Nationalization",
+          "keywords": ["privatization", "commercialization", "indigenization", "nationalization", "public enterprises"]
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "title": "Distributive Trade",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Process of Distribution",
+          "keywords": ["distribution chain", "producers", "wholesalers", "retailers", "consumers"]
+        },
+        {
+          "order": 2,
+          "title": "Role of Wholesalers, Retailers and Co-operatives",
+          "keywords": ["wholesalers", "retailers", "cooperatives", "functions", "importance"]
+        },
+        {
+          "order": 3,
+          "title": "Role of Government in Distribution",
+          "keywords": ["government agencies", "product distribution", "regulation"]
+        },
+        {
+          "order": 4,
+          "title": "Problems of Distribution and Solutions",
+          "keywords": ["distribution problems", "poor infrastructure", "solutions", "remedies"]
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "title": "Population and Labour Market",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Population Size, Growth and Distribution",
+          "keywords": ["population", "size", "growth", "geographical distribution", "age distribution", "sex distribution", "occupational distribution"]
+        },
+        {
+          "order": 2,
+          "title": "Rural-Urban Migration and Malthusian Theory",
+          "keywords": ["rural-urban migration", "Malthusian theory", "population growth", "food supply"]
+        },
+        {
+          "order": 3,
+          "title": "Census",
+          "keywords": ["census", "importance", "problems of census"]
+        },
+        {
+          "order": 4,
+          "title": "Population and Economic Development",
+          "keywords": ["underpopulation", "optimum population", "overpopulation", "economic development"]
+        },
+        {
+          "order": 5,
+          "title": "Labour Force and Human Capital",
+          "keywords": ["labour force", "human capital", "efficiency of labour", "mobility of labour"]
+        },
+        {
+          "order": 6,
+          "title": "Wage Determination and Unemployment",
+          "keywords": ["wage determination", "demand for labour", "supply of labour", "unemployment", "underemployment"]
+        },
+        {
+          "order": 7,
+          "title": "Trade Unions and Government Policies on Labour",
+          "keywords": ["trade unions", "employers association", "government policies", "wages", "collective bargaining"]
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "title": "Agriculture",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Structure of Agriculture",
+          "keywords": ["food crops", "export crops", "livestock", "fisheries"]
+        },
+        {
+          "order": 2,
+          "title": "Systems of Agriculture",
+          "keywords": ["peasant farming", "commercial farming", "cooperative farming", "state farming"]
+        },
+        {
+          "order": 3,
+          "title": "Importance of Agriculture to the National Economy",
+          "keywords": ["food supply", "employment", "foreign exchange", "raw materials", "national income"]
+        },
+        {
+          "order": 4,
+          "title": "Marketing of Agricultural Products",
+          "keywords": ["commodity boards", "marketing boards", "agricultural marketing"]
+        },
+        {
+          "order": 5,
+          "title": "Agricultural Policies, Problems and Remedies",
+          "keywords": ["minimum agricultural prices", "agricultural problems", "remedies", "government policies"]
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "title": "Industrialization",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Meaning and Types of Industry",
+          "keywords": ["extractive", "manufacturing", "construction", "service industries"]
+        },
+        {
+          "order": 2,
+          "title": "Industrial Concepts",
+          "keywords": ["plant", "firm", "industry", "industrial estates"]
+        },
+        {
+          "order": 3,
+          "title": "Location of Industry and Localization",
+          "keywords": ["location of industry", "localization", "factors affecting location"]
+        },
+        {
+          "order": 4,
+          "title": "Role, Strategies and Problems of Industrialization",
+          "keywords": ["role of industrialization", "strategies", "problems of industrialization", "economic development"]
+        },
+        {
+          "order": 5,
+          "title": "Link Between Agriculture and Industry",
+          "keywords": ["agriculture-industry link", "agro-allied industries", "raw materials"]
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "title": "National Income",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "National Income Concepts",
+          "keywords": ["gross domestic product", "GDP", "gross national product", "GNP", "net national product", "NNP", "national income"]
+        },
+        {
+          "order": 2,
+          "title": "Methods of Measuring National Income",
+          "keywords": ["expenditure method", "income method", "output method", "problems of measurement"]
+        },
+        {
+          "order": 3,
+          "title": "Uses and Limitations of National Income Data",
+          "keywords": ["uses", "limitations", "trends", "structure of national income"]
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "title": "Money and Inflation",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Money: Definition, History and Types",
+          "keywords": ["money", "barter", "problems of barter", "commodity money", "paper money", "characteristics of money"]
+        },
+        {
+          "order": 2,
+          "title": "Functions of Money",
+          "keywords": ["medium of exchange", "store of value", "unit of account", "standard of deferred payment"]
+        },
+        {
+          "order": 3,
+          "title": "Supply and Demand for Money",
+          "keywords": ["money supply", "demand for money", "value of money", "price level"]
+        },
+        {
+          "order": 4,
+          "title": "Inflation",
+          "keywords": ["inflation", "types of inflation", "causes of inflation", "effects of inflation", "control of inflation", "deflation"]
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "title": "Financial Institutions",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Types and Functions of Financial Institutions",
+          "keywords": ["central bank", "commercial bank", "development bank", "merchant bank", "insurance companies", "building societies", "traditional financial institutions"]
+        },
+        {
+          "order": 2,
+          "title": "Money Market",
+          "keywords": ["money market", "meaning", "types", "functions"]
+        },
+        {
+          "order": 3,
+          "title": "Capital Market",
+          "keywords": ["capital market", "meaning", "types", "functions", "stock exchange"]
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "title": "Public Finance",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Fiscal Policy and Objectives of Public Finance",
+          "keywords": ["fiscal policy", "public finance", "objectives", "government revenue", "government expenditure"]
+        },
+        {
+          "order": 2,
+          "title": "Taxation",
+          "keywords": ["direct tax", "indirect tax", "objectives of taxation", "merits", "demerits", "incidence of tax", "canons of taxation", "proportional", "progressive", "regressive"]
+        },
+        {
+          "order": 3,
+          "title": "Public Expenditure",
+          "keywords": ["recurrent expenditure", "capital expenditure", "effects of public expenditure"]
+        },
+        {
+          "order": 4,
+          "title": "Government Budget and National Debt",
+          "keywords": ["government budget", "budget deficit", "budget surplus", "national debt", "public debt"]
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "title": "Economic Development and Planning",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Economic Growth vs Economic Development",
+          "keywords": ["economic growth", "economic development", "distinction", "meaning"]
+        },
+        {
+          "order": 2,
+          "title": "Characteristics and Problems of Developing Countries",
+          "keywords": ["developing countries", "characteristics", "low income", "poverty", "problems"]
+        },
+        {
+          "order": 3,
+          "title": "Development Planning",
+          "keywords": ["objectives of planning", "problems of planning", "short term plan", "medium term plan", "long term plan", "rolling plan"]
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "title": "International Trade and Balance of Payments",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Basis of International Trade",
+          "keywords": ["domestic trade", "international trade", "absolute advantage", "comparative advantage", "terms of trade"]
+        },
+        {
+          "order": 2,
+          "title": "Commercial Policy",
+          "keywords": ["commercial policy", "objectives", "tariffs", "direct control", "protectionism", "free trade"]
+        },
+        {
+          "order": 3,
+          "title": "West African External Trade",
+          "keywords": ["West Africa", "external trade", "trends", "structure"]
+        },
+        {
+          "order": 4,
+          "title": "Balance of Payments",
+          "keywords": ["balance of payments", "components", "current account", "capital account", "disequilibrium"]
+        },
+        {
+          "order": 5,
+          "title": "Balance of Payments Adjustment and Financing",
+          "keywords": ["exchange rate policy", "exchange control", "monetary policy", "fiscal policy", "reserves", "international borrowing"]
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "title": "Economic Integration",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Objectives, Levels and Features of Economic Integration",
+          "keywords": ["economic integration", "objectives", "free trade area", "customs union", "common market", "economic union"]
+        },
+        {
+          "order": 2,
+          "title": "ECOWAS and Economic Integration in West Africa",
+          "keywords": ["ECOWAS", "West Africa", "economic integration", "development", "problems"]
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "title": "International Economic Organizations",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "OPEC",
+          "keywords": ["OPEC", "Organization of Petroleum Exporting Countries", "role", "relevance", "West Africa"]
+        },
+        {
+          "order": 2,
+          "title": "IMF and IBRD (World Bank)",
+          "keywords": ["IMF", "International Monetary Fund", "IBRD", "World Bank", "role", "functions"]
+        },
+        {
+          "order": 3,
+          "title": "ECA, AfDB and UNCTAD",
+          "keywords": ["ECA", "Economic Commission for Africa", "African Development Bank", "AfDB", "UNCTAD", "role", "relevance"]
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "title": "Major Natural Resources",
+      "subtopics": [
+        {
+          "order": 1,
+          "title": "Development of Major Natural Resources",
+          "keywords": ["petroleum", "gold", "diamond", "timber", "groundnut", "natural resources", "West Africa"]
+        },
+        {
+          "order": 2,
+          "title": "Effects of Natural Resources on West African Economies",
+          "keywords": ["positive effects", "negative effects", "resource curse", "economic impact", "West Africa"]
+        }
+      ]
+    }
+  ]
+}
