@@ -17,6 +17,6 @@ The app is not using any traditional algotithm. what we are using:
 
 - The Intelligence Layer:(Claude) -> Claude itself is powered by a Large Language Model which is built on top of very complex
                                      algorithms, specifically a type called a Transformer neural network. But that is Claude's
-                                     internal world. We are just the caller, we send a prompt and receive a response
+                                     internal world. We are just the caller, we send a prompt and receive a response.
 
 
