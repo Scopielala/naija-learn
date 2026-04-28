@@ -17,4 +17,4 @@ class Subject(Base):
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     # Relationship
-    exam_body_subjects: Mapped[list["ExamBodySubject"]] = relationship(back_populates="subjects")
+    exam_body_subjects: Mapped[list["ExamBodySubject"]] = relationship(back_populates="subject")

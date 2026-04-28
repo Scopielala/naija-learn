@@ -1,6 +1,7 @@
 # Todo — Nigerian Curriculum Learning Library (Implementation Plan)
 
 ## Legend
+
 - [ ] Not started
 - [~] In progress
 - [x] Done
@@ -93,12 +94,12 @@
 
 ---
 
-## Phase 6 — Claude API Service
+## Phase 6 — Gemini API Service
 
 - [ ] **6.1** Create `app/services/ai_service.py`
 - [ ] **6.2** Write `generate_content()` function that:
   - Accepts a prompt string and content type
-  - Makes an async HTTP call to the Claude API using `httpx`
+  - Makes an async HTTP call to the Gemini API using `httpx`
   - Returns the generated text
   - Handles API errors gracefully
 - [ ] **6.3** Test `generate_content()` with a sample prompt and confirm it returns a valid response
