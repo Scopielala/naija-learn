@@ -16,6 +16,7 @@ to other subjects and exam bodies.
 
 Nigerian students preparing for WAEC, JAMB, and NECO have no single structured resource
 that:
+
 - Organizes content exactly the way the official syllabus is organized
 - Generates clear, exam-focused explanations in plain English
 - Uses Nigerian examples students can relate to
@@ -36,18 +37,21 @@ Validate that the core loop works:
 ### In Scope (MVP)
 
 **1. Syllabus Structure**
+
 - One exam body: WAEC
 - One subject: Economics
 - All 25 topics and 94 subtopics from the official WAEC Economics syllabus
 - Syllabus data seeded into the database from the structured JSON seed file
 
 **2. Content Generation**
+
 - AI-generated notes per subtopic (explanation, definition, examples, key points)
 - AI-generated practice questions per subtopic
 - AI-generated summary per subtopic
 - Content caching — AI is only called once per subtopic; responses are saved and reused
 
 **3. Student-Facing Features**
+
 - Browse all Economics topics
 - Click into a topic to see its subtopics
 - Click a subtopic to read AI-generated notes
@@ -55,15 +59,17 @@ Validate that the core loop works:
 - Request a quick summary for any subtopic
 
 **4. Backend**
+
 - FastAPI backend with async support
 - PostgreSQL database
 - Async SQLAlchemy with asyncpg
 - Alembic for database migrations
-- Claude API integration for content generation
+- Gemini API integration for content generation
 - Content cache layer to avoid repeated AI calls
 - Clean three-layer architecture: routes → service → database
 
 **5. Frontend**
+
 - Vanilla HTML, CSS, and JavaScript
 - Simple, clean, mobile-friendly UI
 - No login or authentication required for MVP
@@ -104,14 +110,14 @@ ExamBody → Subject → Topic → Subtopic → ContentCache
 
 ## API Endpoints (MVP)
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/subjects` | List all available subjects |
-| GET | `/subjects/{subject_id}/topics` | Get all topics for a subject |
-| GET | `/topics/{topic_id}/subtopics` | Get all subtopics under a topic |
-| GET | `/subtopics/{subtopic_id}/notes` | Get or generate notes for a subtopic |
-| GET | `/subtopics/{subtopic_id}/questions` | Get or generate practice questions |
-| GET | `/subtopics/{subtopic_id}/summary` | Get or generate a summary |
+| Method | Endpoint                             | Description                          |
+| ------ | ------------------------------------ | ------------------------------------ |
+| GET    | `/subjects`                          | List all available subjects          |
+| GET    | `/subjects/{subject_id}/topics`      | Get all topics for a subject         |
+| GET    | `/topics/{topic_id}/subtopics`       | Get all subtopics under a topic      |
+| GET    | `/subtopics/{subtopic_id}/notes`     | Get or generate notes for a subtopic |
+| GET    | `/subtopics/{subtopic_id}/questions` | Get or generate practice questions   |
+| GET    | `/subtopics/{subtopic_id}/summary`   | Get or generate a summary            |
 
 ---
 
@@ -129,14 +135,14 @@ The MVP is considered successful if:
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Backend Framework | FastAPI |
-| Database | PostgreSQL |
-| ORM | SQLAlchemy (async) |
-| DB Driver | asyncpg |
-| Migrations | Alembic |
-| AI Integration | Claude API (claude-sonnet) |
-| Config Management | pydantic-settings |
-| Frontend | HTML, CSS, Vanilla JavaScript |
-| Version Control | Git + GitHub |
+| Layer             | Technology                    |
+| ----------------- | ----------------------------- |
+| Backend Framework | FastAPI                       |
+| Database          | PostgreSQL                    |
+| ORM               | SQLAlchemy (async)            |
+| DB Driver         | asyncpg                       |
+| Migrations        | Alembic                       |
+| AI Integration    | Claude API (claude-sonnet)    |
+| Config Management | pydantic-settings             |
+| Frontend          | HTML, CSS, Vanilla JavaScript |
+| Version Control   | Git + GitHub                  |
