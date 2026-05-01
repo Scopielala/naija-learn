@@ -1,4 +1,4 @@
-The app is not using any traditional algotithm. what we are using:
+The app is not using any traditional algorithm. what we are using:
 
 - Cache-First-Pattern: This is a decision-making pattern our content service follows every single time
                         a student requests content.
@@ -12,11 +12,11 @@ The app is not using any traditional algotithm. what we are using:
                         Fetch subtopic data from database
                             Extract title, topic, keywords
                                 fill into prompt template
-                                    send to Claude API
+                                    send to Gemini API
 
 
-- The Intelligence Layer:(Claude) -> Claude itself is powered by a Large Language Model which is built on top of very complex
-                                     algorithms, specifically a type called a Transformer neural network. But that is Claude's
+- The Intelligence Layer:(Gemini) -> Gemini itself is powered by a Large Language Model which is built on top of very complex
+                                     algorithms, specifically a type called a Transformer neural network. But that is Gemini's
                                      internal world. We are just the caller, we send a prompt and receive a response.
 
 
