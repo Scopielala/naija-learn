@@ -94,7 +94,7 @@
 
 ---
 
-## Phase 6 — Gemini API Service
+## Phase 6 — Groq API Service
 
 - [ ] **6.1** Create `app/services/ai_service.py`
 - [ ] **6.2** Write `generate_content()` function that:

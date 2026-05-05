@@ -14,7 +14,7 @@ subtopics and receive AI-generated explanations and practice questions.
 - PostgreSQL
 - SQLAlchemy (async)
 - Alembic
-- Gemini API
+- Groq API
 - Vanilla HTML/CSS/JS
 
 ## Setup

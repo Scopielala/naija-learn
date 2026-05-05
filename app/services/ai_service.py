@@ -27,7 +27,7 @@ async def generate_content(prompt: str) -> str:
     }
 
     # Groq uses the OpenAI-compatible messages format
-    # Much cleaner than Gemini's nested structure
+    
     payload = {
         "model": settings.GROQ_MODEL,
         "messages": [

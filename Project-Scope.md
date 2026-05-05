@@ -64,7 +64,7 @@ Validate that the core loop works:
 - PostgreSQL database
 - Async SQLAlchemy with asyncpg
 - Alembic for database migrations
-- Gemini API integration for content generation
+- Groq API integration for content generation
 - Content cache layer to avoid repeated AI calls
 - Clean three-layer architecture: routes → service → database
 

@@ -31,5 +31,5 @@ class Settings(BaseSettings):
             F"{self.DATABASE_PORT}/{self.DATABASE_NAME}"
             )
     
-settings = Settings()
+settings = Settings() # type: ignore
     
