@@ -23,9 +23,9 @@ naija-learn/
 
 ## Branch Structure
 
-main → stable, production-ready code only
-dev → integration branch — all features merge here first
-feature → individual work branches — created from dev
+- main → stable, production-ready code only
+- dev → integration branch — all features merge here first
+- feature → individual work branches — created from dev
 
 ---
 
@@ -105,7 +105,7 @@ server is running.
 ## Communication
 
 - All technical discussions happen in GitHub issues and PR comments
-- Weekly sync every [set your day] to discuss progress and blockers
+- Weekly sync every [Saturday's] to discuss progress and blockers
 - Any change to the API contract must be discussed and agreed
   before implementation
 
