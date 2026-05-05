@@ -11,8 +11,9 @@ class Settings(BaseSettings):
     DATABASE_PASSWORD: str
     DATABASE_NAME: str
     
-    # Gemini API key
-    GEMINI_API_KEY: str
+    # Gemini API info
+    GROQ_API_KEY: str
+    GROQ_MODEL: str = "llama-3.3-70b-versatile"
 
 
     # App details
