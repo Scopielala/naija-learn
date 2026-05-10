@@ -1,27 +1,89 @@
 # Naija Learn
 
-A Nigerian curriculum-based learning platform that organizes content using
-the official WAEC syllabus as its backbone. Students can browse topics and
-subtopics and receive AI-generated explanations and practice questions.
+An AI-powered learning platform organized around the official
+Nigerian WAEC curriculum. Students browse topics and subtopics
+from the official syllabus and receive AI-generated explanations,
+practice questions, and summaries tailored for Nigerian students.
+
+---
 
 ## MVP Subject
 
-- WAEC Economics
+WAEC Economics — 25 topics, 97 subtopics
 
 ## Tech Stack
 
-- FastAPI
-- PostgreSQL
-- SQLAlchemy (async)
-- Alembic
-- Groq API
-- Vanilla HTML/CSS/JS
+| Layer      | Technology                    |
+| ---------- | ----------------------------- |
+| Backend    | FastAPI                       |
+| Database   | PostgreSQL                    |
+| ORM        | SQLAlchemy (async)            |
+| Migrations | Alembic                       |
+| AI         | Groq API — LLaMA 3.3 70B      |
+| Frontend   | HTML, CSS, Vanilla JavaScript |
 
-## Setup
+---
+
+## Project Status
+
+| Phase | Description        | Status         |
+| ----- | ------------------ | -------------- |
+| 1     | Project Setup      | ✅ Complete    |
+| 2     | Database Models    | ✅ Complete    |
+| 3     | Database Seeding   | ✅ Complete    |
+| 4     | Pydantic Schemas   | ✅ Complete    |
+| 5     | AI Prompt Builder  | ✅ Complete    |
+| 6     | Groq AI Service    | ✅ Complete    |
+| 7     | Core Service Layer | 🔄 In Progress |
+| 8     | API Routes         | ⏳ Pending     |
+| 9     | Frontend           | ⏳ Pending     |
+| 10    | Testing & Cleanup  | ⏳ Pending     |
+
+---
+
+## Local Setup
 
 1. Clone the repo
-2. Run `uv sync` to install dependencies
-3. Create a `.env` file using `.env.example` as a guide
-4. Run `uv run alembic upgrade head` to set up the database
-5. Run `uv run python scripts/seed.py` to seed the syllabus data
-6. Run `uv run uvicorn app.main:app --reload` to start the server
+
+```bash
+git clone https://github.com/Scopielala/naija-learn.git
+cd naija-learn
+```
+
+2. Install dependencies
+
+```bash
+uv sync
+```
+
+3. Create `.env` file — use `.env.example` as a guide
+
+4. Set up the database
+
+```bash
+uv run alembic upgrade head
+```
+
+5. Seed the syllabus data
+
+```bash
+uv run python scripts/seed.py
+```
+
+6. Start the server
+
+```bash
+uv run uvicorn app.main:app --reload
+```
+
+7. Visit `http://localhost:8000/docs` to explore the API
+
+---
+
+## Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before writing any code.
+
+## License
+
+MIT
