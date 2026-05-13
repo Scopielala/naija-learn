@@ -6,7 +6,8 @@ from app.routes import subjects, topics, subtopics, content
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
-    description="AI-powered learning platform built around the Nigerian Waec syllabus"
+    description="AI-powered learning platform built around the Nigerian Waec syllabus",
+    redirect_slashes=False
 )
 
 # CORS middleware: allows the frontend to make requests to the backend
