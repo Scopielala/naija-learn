@@ -20,10 +20,10 @@ app.add_middleware(
 )
 
 # Register all routers
-app.include_router(subjects.router)
-app.include_router(topics.router)
-app.include_router(subtopics.router)
-app.include_router(content.router)
+app.include_router(subjects.router, prefix="/api/v1")
+app.include_router(topics.router, prefix="/api/v1")
+app.include_router(subtopics.router, prefix="/api/v1")
+app.include_router(content.router, prefix="/api/v1")
 
 @app.get("/")
 async def root():
