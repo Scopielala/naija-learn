@@ -88,14 +88,14 @@ The lead merges your PR into dev. Delete your feature branch after merging.
 The backend exposes these endpoints. The frontend must
 call them exactly as documented:
 
-| Method | Endpoint                    | Description               |
-| ------ | --------------------------- | ------------------------- |
-| GET    | `/subjects`                 | List all subjects         |
-| GET    | `/subjects/{id}/topics`     | Get topics for a subject  |
-| GET    | `/topics/{id}/subtopics`    | Get subtopics for a topic |
-| GET    | `/subtopics/{id}/notes`     | Get or generate notes     |
-| GET    | `/subtopics/{id}/questions` | Get or generate questions |
-| GET    | `/subtopics/{id}/summary`   | Get or generate summary   |
+| Method | Endpoint                           | Description               |
+| ------ | ---------------------------------- | ------------------------- |
+| GET    | `/api/v1/subjects`                 | List all subjects         |
+| GET    | `/api/v1/subjects/{id}/topics`     | Get topics for a subject  |
+| GET    | `/api/v1/topics/{id}/subtopics`    | Get subtopics for a topic |
+| GET    | `/api/v1/subtopics/{id}/notes`     | Get or generate notes     |
+| GET    | `/api/v1/subtopics/{id}/questions` | Get or generate questions |
+| GET    | `/api/v1/subtopics/{id}/summary`   | Get or generate summary   |
 
 Full API documentation available at `/docs` when the
 server is running.
