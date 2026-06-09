@@ -1,0 +1,236 @@
+/*
+ * base.css
+ *
+ * Foundation styles for Naija Learn.
+ * Three sections:
+ * 1. CSS Custom Properties (variables) — the design system
+ * 2. CSS Reset — removes browser default inconsistencies
+ * 3. Base element styles — typography and global defaults
+ *
+ * Every other CSS file uses the variables defined here.
+ * Change a variable here and it updates everywhere.
+ */
+
+
+/* ============================================
+   1. CSS CUSTOM PROPERTIES (Design System)
+   ============================================ */
+
+:root {
+
+    /* --- Colors --- */
+
+    /* Primary — deep green, Nigerian flag inspired */
+    --color-primary:         #1a5c38;
+    --color-primary-light:   #2d7a4f;
+    --color-primary-dark:    #0f3d25;
+
+    /* Accent — warm gold, premium feel */
+    --color-accent:          #c9a84c;
+    --color-accent-light:    #e0c270;
+
+    /* Backgrounds */
+    --color-bg-app:          #f0f4f0;
+    --color-bg-screen:       #f0f4f0;
+    --color-bg-card:         #ffffff;
+    --color-bg-header:       #1a5c38;
+
+    /* Text */
+    --color-text-primary:    #1a1a1a;
+    --color-text-secondary:  #555555;
+    --color-text-muted:      #888888;
+    --color-text-on-primary: #ffffff;
+
+    /* Borders */
+    --color-border:          #e0e0e0;
+    --color-border-light:    #f0f0f0;
+
+    /* Feedback */
+    --color-error:           #c0392b;
+    --color-error-light:     #fdf0ef;
+    --color-success:         #27ae60;
+
+    /* --- Typography --- */
+    --font-family:           "Inter", -apple-system, BlinkMacSystemFont,
+                             "Segoe UI", sans-serif;
+
+    --font-size-xs:          0.75rem;    /* 12px — labels, metadata */
+    --font-size-sm:          0.875rem;   /* 14px — secondary text */
+    --font-size-base:        1rem;       /* 16px — body text */
+    --font-size-lg:          1.125rem;   /* 18px — emphasized body */
+    --font-size-xl:          1.25rem;    /* 20px — subheadings */
+    --font-size-2xl:         1.5rem;     /* 24px — screen titles */
+    --font-size-3xl:         2rem;       /* 32px — hero text */
+
+    --font-weight-regular:   400;
+    --font-weight-medium:    500;
+    --font-weight-semibold:  600;
+    --font-weight-bold:      700;
+
+    --line-height-tight:     1.2;
+    --line-height-normal:    1.5;
+    --line-height-relaxed:   1.8;
+
+    /* --- Spacing --- */
+    /* Based on a 4px grid — all spacing is a multiple of 4 */
+    --space-1:   0.25rem;  /* 4px */
+    --space-2:   0.5rem;   /* 8px */
+    --space-3:   0.75rem;  /* 12px */
+    --space-4:   1rem;     /* 16px */
+    --space-5:   1.25rem;  /* 20px */
+    --space-6:   1.5rem;   /* 24px */
+    --space-8:   2rem;     /* 32px */
+    --space-10:  2.5rem;   /* 40px */
+    --space-12:  3rem;     /* 48px */
+
+    /* --- Layout --- */
+    --app-max-width:         480px;
+    --header-height:         56px;
+    --screen-padding:        var(--space-4);
+
+    /* --- Border Radius --- */
+    --radius-sm:             0.375rem;   /* 6px */
+    --radius-md:             0.75rem;    /* 12px */
+    --radius-lg:             1rem;       /* 16px */
+    --radius-xl:             1.5rem;     /* 24px */
+    --radius-full:           9999px;     /* fully rounded */
+
+    /* --- Shadows --- */
+    --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.10);
+    --shadow-lg:   0 8px 24px rgba(0, 0, 0, 0.12);
+
+    /* --- Transitions --- */
+    --transition-fast:       150ms ease;
+    --transition-normal:     250ms ease;
+    --transition-slow:       400ms ease;
+}
+
+
+/* ============================================
+   2. CSS RESET
+   ============================================ */
+
+/* Box sizing — include padding and border in element width */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Make images responsive by default */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Remove default button styles */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Remove default input styles */
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+}
+
+
+/* ============================================
+   3. BASE ELEMENT STYLES
+   ============================================ */
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    /* Prevent font size inflation on mobile */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-app);
+    min-height: 100vh;
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+}
+
+/* App container — centers the app on large screens */
+#app {
+    max-width: var(--app-max-width);
+    margin: 0 auto;
+    min-height: calc(100vh - var(--header-height));
+    padding-top: var(--header-height);
+    position: relative;
+}
+
+/* App header — fixed at the top */
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--color-bg-header);
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.app-header-inner {
+    max-width: var(--app-max-width);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--screen-padding);
+}
+
+.app-logo {
+    color: var(--color-text-on-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    user-select: none;
+    letter-spacing: -0.01em;
+}
+
+/* Focus styles — visible outline for keyboard users */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Smooth transitions for interactive elements */
+button, [role="button"] {
+    transition: opacity var(--transition-fast),
+                transform var(--transition-fast);
+}
+
+button:active, [role="button"]:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
