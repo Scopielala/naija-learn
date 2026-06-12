@@ -163,3 +163,10 @@
 ## Current Status
 
 **Phase 1 — Project Setup** is next.
+
+## v2 features
+
+- Past-Questions for each ExamBody(WAEC, NECO, JAMB) dictated by the AI.
+- Checkbox for choosing correct answers
+- Answers display section. (onClick)
+-
