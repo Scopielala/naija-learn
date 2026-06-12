@@ -73,8 +73,6 @@ function setState(newPartialState) {
     // into AppState, overwriting only what changed
     Object.assign(AppState, newPartialState)
 
-    console.trace("[setState called from]")
-
     // Log state changes in development so developers
     // can trace exactly what changed and when
     if (NaijaLearnConfig.DEBUG_MODE) {

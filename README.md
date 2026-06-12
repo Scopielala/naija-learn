@@ -26,18 +26,18 @@ WAEC Economics — 25 topics, 97 subtopics
 
 ## Project Status
 
-| Phase | Description        | Status         |
-| ----- | ------------------ | -------------- |
-| 1     | Project Setup      | ✅ Complete    |
-| 2     | Database Models    | ✅ Complete    |
-| 3     | Database Seeding   | ✅ Complete    |
-| 4     | Pydantic Schemas   | ✅ Complete    |
-| 5     | AI Prompt Builder  | ✅ Complete    |
-| 6     | Groq AI Service    | ✅ Complete    |
-| 7     | Core Service Layer | 🔄 In Progress |
-| 8     | API Routes         | ⏳ Pending     |
-| 9     | Frontend           | ⏳ Pending     |
-| 10    | Testing & Cleanup  | ⏳ Pending     |
+| Phase | Description        | Status      |
+| ----- | ------------------ | ----------- |
+| 1     | Project Setup      | ✅ Complete |
+| 2     | Database Models    | ✅ Complete |
+| 3     | Database Seeding   | ✅ Complete |
+| 4     | Pydantic Schemas   | ✅ Complete |
+| 5     | AI Prompt Builder  | ✅ Complete |
+| 6     | Groq AI Service    | ✅ Complete |
+| 7     | Core Service Layer | ✅ Complete |
+| 8     | API Routes         | ✅ Complete |
+| 9     | Frontend           | ✅ Complete |
+| 10    | Testing & Cleanup  | ✅ Complete |
 
 ---
 
@@ -70,13 +70,22 @@ uv run alembic upgrade head
 uv run python scripts/seed.py
 ```
 
-6. Start the server
+6. Start the server (Backend)
 
 ```bash
 uv run uvicorn app.main:app --reload
 ```
 
 7. Visit `http://localhost:8000/docs` to explore the API
+
+8. Start the server (Frontend)
+
+```bash
+cd frontend
+python -m http.server 5500
+```
+
+9. Visit http://localhost:5500 in your browser.
 
 ---
 

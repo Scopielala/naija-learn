@@ -48,7 +48,7 @@ const NaijaLearnConfig = {
     APP_NAME:    "Naija Learn",
     APP_TAGLINE: "Study smarter. Exam ready.",
 
-    DEBUG_MODE: true, 
+    DEBUG_MODE: false, 
 }
 
 // Freeze the config so nothing can accidentally modify it
