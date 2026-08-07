@@ -87,7 +87,7 @@ function renderLandingScreen() {
  * 4. Render subject cards
  */
 async function renderSubjectsScreen() {
-    console.log("renderSubjectsScreen called", new Date().toISOString())
+    console.log("renderSubjectsScreen called", new Date().toISOString()) // Find out what this line of code does
     const appContainer = getAppContainer()
 
     // Show loading spinner immediately so the student
