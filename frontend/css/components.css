@@ -1,0 +1,341 @@
+/*
+ * components.css
+ *
+ * Styles for reusable UI components.
+ * Matches the components defined in components.js.
+ *
+ * Each component section is clearly labeled.
+ * Components are self-contained — they do not
+ * depend on which screen they appear on.
+ */
+
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+
+.loading-spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-12) var(--space-4);
+    gap: var(--space-4);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-message {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+}
+
+
+/* ============================================
+   ERROR MESSAGE
+   ============================================ */
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-12) var(--space-4);
+    gap: var(--space-4);
+    text-align: center;
+}
+
+.error-icon {
+    font-size: 2.5rem;
+}
+
+.error-message {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    max-width: 280px;
+}
+
+.retry-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    transition: background-color var(--transition-fast);
+}
+
+.retry-button:hover {
+    background-color: var(--color-primary-light);
+}
+
+
+/* ============================================
+   BACK BUTTON
+   ============================================ */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    padding: var(--space-2) 0;
+    margin-bottom: var(--space-2);
+}
+
+.back-button:hover {
+    color: var(--color-primary-dark);
+}
+
+
+/* ============================================
+   SUBJECT CARD
+   ============================================ */
+
+.subject-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-4);
+    margin-bottom: var(--space-3);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    border: 1px solid var(--color-border-light);
+    transition: box-shadow var(--transition-fast),
+                transform var(--transition-fast);
+}
+
+.subject-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.subject-card:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.subject-card-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.subject-card-body {
+    flex: 1;
+}
+
+.subject-card-name {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-1);
+}
+
+.subject-card-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.subject-card-chevron {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+
+/* ============================================
+   TOPIC CARD
+   ============================================ */
+
+.topic-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin-bottom: var(--space-2);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    border: 1px solid var(--color-border-light);
+    transition: box-shadow var(--transition-fast),
+                transform var(--transition-fast);
+}
+
+.topic-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.topic-order {
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-bg-app);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.topic-card-body {
+    flex: 1;
+}
+
+.topic-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-1);
+}
+
+.topic-subtopic-count {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+}
+
+.topic-card-chevron {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+
+/* ============================================
+   SUBTOPIC CARD
+   ============================================ */
+
+.subtopic-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin-bottom: var(--space-2);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    border: 1px solid var(--color-border-light);
+    transition: box-shadow var(--transition-fast),
+                transform var(--transition-fast);
+}
+
+.subtopic-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.subtopic-card-body {
+    flex: 1;
+}
+
+.subtopic-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-2);
+}
+
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+}
+
+.keyword-tag {
+    font-size: var(--font-size-xs);
+    color: var(--color-primary);
+    background-color: rgba(26, 92, 56, 0.08);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-medium);
+}
+
+.subtopic-card-chevron {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+
+/* ============================================
+   CONTENT TABS
+   ============================================ */
+
+.content-tabs {
+    display: flex;
+    background-color: var(--color-bg-card);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 10;
+}
+
+.content-tab {
+    flex: 1;
+    padding: var(--space-3) var(--space-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-fast),
+                border-color var(--transition-fast);
+    text-align: center;
+}
+
+.content-tab:hover {
+    color: var(--color-primary);
+}
+
+.content-tab--active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+
+/* ============================================
+   CONTENT BODY
+   ============================================ */
+
+.content-body {
+    padding: var(--space-6) var(--screen-padding);
+    line-height: var(--line-height-relaxed);
+}
+
+.content-body p {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-4);
+}
+
+.content-body p:last-child {
+    margin-bottom: 0;
+}

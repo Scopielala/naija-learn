@@ -155,9 +155,18 @@
 - [ ] **10.4** Test on mobile browser
 - [ ] **10.5** Clean up code — remove debug logs, add docstrings to key functions
 - [ ] **10.6** Update `README.md` with setup instructions and how to run the project
+- [ ] **10.7** Refactor session management — move from automatic session commits in get_db() to explicit
+  - commits in service layer when write operations are introduced.
 
 ---
 
 ## Current Status
 
 **Phase 1 — Project Setup** is next.
+
+## v2 features
+
+- Past-Questions for each ExamBody(WAEC, NECO, JAMB) dictated by the AI.
+- Checkbox for choosing correct answers
+- Answers display section. (onClick)
+-

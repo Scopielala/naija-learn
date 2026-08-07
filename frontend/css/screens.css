@@ -1,0 +1,180 @@
+/*
+ * screens.css
+ *
+ * Styles specific to each screen in the app.
+ * These styles only apply to elements within
+ * their respective screen containers.
+ *
+ * Screen sections:
+ * - Landing screen
+ * - Subjects screen
+ * - Topics screen
+ * - Subtopics screen
+ * - Content screen
+ * - Shared screen elements
+ */
+
+
+/* ============================================
+   SHARED SCREEN ELEMENTS
+   Used across multiple screens
+   ============================================ */
+
+.screen-header {
+    padding: var(--space-4) var(--screen-padding);
+    padding-bottom: var(--space-3);
+    background-color: var(--color-bg-screen);
+}
+
+.screen-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.02em;
+}
+
+.screen-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+}
+
+.screen-body {
+    padding: var(--space-3) var(--screen-padding);
+    padding-bottom: var(--space-12);
+}
+
+
+/* ============================================
+   LANDING SCREEN
+   ============================================ */
+
+.landing-screen {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - var(--header-height));
+    padding: var(--space-8) var(--screen-padding);
+}
+
+.landing-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-8) 0;
+}
+
+.landing-logo {
+    font-size: 4rem;
+    margin-bottom: var(--space-4);
+    animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+
+.landing-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    letter-spacing: -0.03em;
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-3);
+}
+
+.landing-tagline {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.landing-body {
+    text-align: center;
+    padding: 0 var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.landing-description {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+.landing-footer {
+    padding-bottom: var(--space-8);
+}
+
+.start-button {
+    display: block;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: background-color var(--transition-fast),
+                box-shadow var(--transition-fast),
+                transform var(--transition-fast);
+}
+
+.start-button:hover {
+    background-color: var(--color-primary-light);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.start-button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ============================================
+   SUBJECTS SCREEN
+   ============================================ */
+
+.subjects-screen {
+    min-height: calc(100vh - var(--header-height));
+}
+
+
+/* ============================================
+   TOPICS SCREEN
+   ============================================ */
+
+.topics-screen {
+    min-height: calc(100vh - var(--header-height));
+}
+
+
+/* ============================================
+   SUBTOPICS SCREEN
+   ============================================ */
+
+.subtopics-screen {
+    min-height: calc(100vh - var(--header-height));
+}
+
+
+/* ============================================
+   CONTENT SCREEN
+   ============================================ */
+
+.content-screen {
+    min-height: calc(100vh - var(--header-height));
+}
+
+.content-tabs-container {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 10;
+    background-color: var(--color-bg-card);
+}
