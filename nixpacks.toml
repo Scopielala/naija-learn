@@ -7,9 +7,8 @@ cmds = [
 ]
 
 [start]
-cmd = "uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+cmd = "export LD_LIBRARY_PATH=$(dirname $(find /nix/store -name libstdc++.so.6 | head -1)):$LD_LIBRARY_PATH && uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT"
 
 [variables]
 UV_PYTHON_PREFERENCE = "only-system"
 UV_PYTHON = "python3"
-LD_LIBRARY_PATH = "/root/nix-profile/lib:$LD_LIBRARY_PATH"
