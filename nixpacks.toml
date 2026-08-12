@@ -1,5 +1,6 @@
 [phases.setup]
 nixPkgs = ["python312", "uv", "gcc"]
+nixLibs = ["gcc-unwrapped"]
 
 [phases.install]
 cmds = [
@@ -7,7 +8,7 @@ cmds = [
 ]
 
 [start]
-cmd = "export LD_LIBRARY_PATH=$(dirname $(find /nix/store -name libstdc++.so.6 | head -1)):$LD_LIBRARY_PATH && uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+cmd = "uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT"
 
 [variables]
 UV_PYTHON_PREFERENCE = "only-system"
