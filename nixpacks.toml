@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["python312", "uv"]
+nixPkgs = ["python312", "uv", "gcc"]
 
 [phases.install]
 cmds = [
@@ -12,3 +12,4 @@ cmd = "uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT"
 [variables]
 UV_PYTHON_PREFERENCE = "only-system"
 UV_PYTHON = "python3"
+LD_LIBRARY_PATH = "/root/nix-profile/lib:$LD_LIBRARY_PATH"
