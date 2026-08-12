@@ -1,12 +1,12 @@
 # I'm Building a Learning Platform for Nigerian Students — Here's What I've Done So Far
 
-*A backend engineer's first-person account of building Naija Learn from scratch.*
+_A backend engineer's first-person account of building Naija Learn from scratch._
 
 ---
 
 Every great project starts with a conversation. Mine started with a simple thought:
 
-*Nigerian students deserve better.*
+_Nigerian students deserve better._
 
 Not better in a vague, motivational-poster kind of way. Better in a concrete, practical,
 "why do I have to buy five different textbooks just to prepare for one WAEC exam" kind of
@@ -73,7 +73,7 @@ With the project skeleton in place I moved to the database models. Six tables. E
 representing a real concept in the system:
 
 ```
-ExamBody → Subject → Topic → Subtopic → ContentCache
+ExamBody -> Subject -> Topic → Subtopic → ContentCache -> ExamBodySubject
 ```
 
 `ExamBody` is WAEC, JAMB, NECO — the bodies that set the syllabuses. `Subject` is
