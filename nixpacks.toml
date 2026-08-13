@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["python312", "uv", "gcc"]
+nixPkgs = ["python312", "uv", "stdenv.cc.cc.lib"]
 nixLibs = ["gcc-unwrapped"]
 
 [phases.install]
