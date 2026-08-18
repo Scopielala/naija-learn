@@ -1,0 +1,118 @@
+# =============================================================
+# .dockerignore
+# =============================================================
+# Tells Docker which files to EXCLUDE when building the image.
+# Works exactly like .gitignore but for Docker builds.
+#
+# Why this matters:
+# Without .dockerignore Docker copies your ENTIRE project
+# into the build context — including node_modules, .git,
+# .venv and other large folders. This makes builds slow
+# and images unnecessarily large.
+# =============================================================
+
+
+# -------------------------------------------------------------
+# VIRTUAL ENVIRONMENT
+# -------------------------------------------------------------
+# Never copy the local .venv into the image.
+# Docker installs its own dependencies via uv sync.
+# The local .venv might be for a different OS (Windows)
+# while the container runs Linux — binaries would be wrong.
+# -------------------------------------------------------------
+.venv/
+
+
+# -------------------------------------------------------------
+# GIT
+# -------------------------------------------------------------
+# Git history is not needed inside the container.
+# Can add hundreds of megabytes to the build context.
+# -------------------------------------------------------------
+.git/
+.gitignore
+.github/
+
+
+# -------------------------------------------------------------
+# ENVIRONMENT FILES
+# -------------------------------------------------------------
+# NEVER bake secrets into a Docker image.
+# Environment variables are passed in at runtime via:
+# - docker run --env-file .env
+# - Railway environment variables panel
+# - docker-compose.yml environment section
+# -------------------------------------------------------------
+.env
+.env.*
+.env.docker
+
+
+# -------------------------------------------------------------
+# PYTHON CACHE
+# -------------------------------------------------------------
+# Bytecode cache and compiled files from your local machine.
+# Not needed and may cause issues inside the container.
+# -------------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+
+# -------------------------------------------------------------
+# FRONTEND
+# -------------------------------------------------------------
+# The frontend is a separate static site deployed to Vercel.
+# It does not belong in the backend Docker image.
+# Excluding it keeps the image focused and smaller.
+# -------------------------------------------------------------
+frontend/
+
+
+# -------------------------------------------------------------
+# DOCUMENTATION AND ARTICLES
+# -------------------------------------------------------------
+# Markdown files, articles, and docs are not needed
+# to run the application.
+# -------------------------------------------------------------
+*.md
+Articles/
+docs/
+
+
+# -------------------------------------------------------------
+# TEST FILES
+# -------------------------------------------------------------
+# Test files are development tools — not production code.
+# -------------------------------------------------------------
+test_*.py
+tests/
+
+
+# -------------------------------------------------------------
+# EDITOR AND IDE FILES
+# -------------------------------------------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+
+# -------------------------------------------------------------
+# DOCKER FILES THEMSELVES
+# -------------------------------------------------------------
+# The Dockerfile and docker-compose.yml are build tools.
+# They do not need to exist inside the running container.
+# -------------------------------------------------------------
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+
+# -------------------------------------------------------------
+# MISCELLANEOUS
+# -------------------------------------------------------------
+nixpacks.toml
+railway.toml
+utilities.txt
