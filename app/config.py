@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     DATABASE_HOSTNAME: str = "localhost"
     DATABASE_PORT: str = "5432"
     DATABASE_USERNAME: str = "postgres"
-    DATABASE_PASSWORD: str = ""
+    DATABASE_PASSWORD: str = "NaijaLearn2024"
     DATABASE_NAME: str = "naija_learn"
 
     # Railway provides this — takes priority over individual parts

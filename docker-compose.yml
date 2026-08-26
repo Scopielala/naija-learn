@@ -1,0 +1,70 @@
+# =============================================================
+# Naija Learn — Docker Compose
+# =============================================================
+
+# Orchestrates the services required to run the Naija Learn application.
+services:
+# ============================================================
+# DATABASE SERVICE — PostgreSQL
+# ============================================================
+  database:
+    image: postgres:16-alpine
+    container_name: naija_learn_db
+    environment:
+      POSTGRES_DB:       ${DATABASE_NAME}
+      POSTGRES_USER:     ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USERNAME} -d ${DATABASE_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+# ============================================================
+  # BACKEND SERVICE — FastAPI
+# ============================================================
+  backend:
+    image: scopidoo/naija-learn:0.1.0
+    container_name: naija_learn_backend
+    env_file:
+      - .env.docker
+    ports:
+      - "8000:8000"
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+# ============================================================
+# ADMINER SERVICE — Database Viewer
+# ============================================================
+
+  adminer:
+    image: adminer:latest
+    container_name: naija_learn_adminer
+    ports:
+      - "8081:8080"
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: unless-stopped
+
+# =============================================================
+# VOLUMES
+# Named volumes managed by Docker.
+# Data persists here between container restarts and removals.
+# =============================================================
+volumes:
+  postgres_data:
+    name: naija_learn_postgres_data

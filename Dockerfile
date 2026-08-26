@@ -70,6 +70,5 @@ EXPOSE 8000
 # -------------------------------------------------------------
 # The command that runs when the container starts.
 # -------------------------------------------------------------
-# Remove the hardcoded CMD and use a shell form
 # so $PORT gets properly resolved at runtime
 CMD uv run uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}

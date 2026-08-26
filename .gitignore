@@ -6,6 +6,7 @@ api-key.txt
 
 # Environment variables - NEVER commit this
 .env
+.env.docker
 
 # Python cache
 __pycache__/
