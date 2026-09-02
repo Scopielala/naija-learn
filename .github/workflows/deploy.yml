@@ -1,120 +1,146 @@
 # =============================================================
 # Naija Learn — CI/CD Deployment Workflow
 # =============================================================
-# This workflow automatically builds and pushes a Docker image
-# to GitHub Container Registry (GHCR) whenever code is pushed
-# to the main branch.
+# Automatically builds and pushes a Docker image to GitHub
+# Container Registry (GHCR) whenever code is pushed to main.
 #
 # Railway watches GHCR for new images and redeploys
-# automatically — zero manual steps needed.
+# automatically — zero manual steps after git push.
 #
 # Triggers:
-#   - Push to main branch  → builds and deploys latest
-#   - Git tag (v*.*.*)     → builds and deploys with version tag
+#   Push to main     → builds latest + SHA tags
+#   Git tag v*.*.*   → builds latest + SHA + version tags
 # =============================================================
 
 name: Build and Deploy
 
 on:
   push:
-    # Trigger workflow on every push to main
+    # Run on every push to main branch
     branches:
       - main
-    # Also trigger when a version tag is pushed
-    # v1.0.0, v1.1.0, v2.0.0 etc
+    # Also run when a version tag is pushed
+    # Matches: v1.0.0, v1.1.0, v2.0.0 etc
     tags:
       - "v*.*.*"
 
-# Permissions needed for GHCR
-# contents:read  → checkout the code
-# packages:write → push images to GHCR
+# Explicit permissions — security best practice
+# Only grant what the workflow actually needs
 permissions:
-  contents: read
-  packages: write
+  contents: read # needed to checkout the code
+  packages: write # needed to push images to GHCR
 
 jobs:
   build-and-push:
-    # Run this job on GitHub's Ubuntu Linux runner
-    # This is a fresh virtual machine provided by GitHub
-    # for free — clean environment every time
+    # Fresh Ubuntu Linux VM provided by GitHub for free
+    # Clean environment on every run — no leftover state
     runs-on: ubuntu-latest
 
     steps:
       # ---------------------------------------------------------
       # STEP 1 — Checkout Code
       # ---------------------------------------------------------
-      # Downloads your repository code onto the runner machine.
-      # Without this the runner has no code to build.
-      # actions/checkout is an official GitHub Action.
-      # @v4 is the version — always pin to a version for stability
+      # Downloads your repository onto the runner machine.
+      # Without this the runner has no code to build from.
+      # @v4 pins to a specific version for stability —
+      # avoids unexpected breaking changes from the action author.
       # ---------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
       # ---------------------------------------------------------
-      # STEP 2 — Extract Metadata
+      # STEP 2 — Generate Lowercase Image Name
       # ---------------------------------------------------------
-      # Automatically generates Docker image tags and labels.
+      # GHCR requires all image names to be fully lowercase.
+      # github.repository_owner returns "Scopielala" with a
+      # capital S which GHCR rejects with:
+      # "repository name must be lowercase"
       #
-      # For a push to main it generates:
+      # tr '[:upper:]' '[:lower:]' converts any uppercase
+      # letters to lowercase — "Scopielala" becomes "scopielala"
+      #
+      # The result is written to GITHUB_OUTPUT so later steps
+      # can reference it as: ${{ steps.image.outputs.name }}
+      #
+      # Final value: ghcr.io/scopielala/naija-learn
+      # ---------------------------------------------------------
+      - name: Generate lowercase image name
+        id: image
+        run: |
+          echo "name=ghcr.io/$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')/naija-learn" >> $GITHUB_OUTPUT
+
+      # ---------------------------------------------------------
+      # STEP 3 — Extract Docker Metadata
+      # ---------------------------------------------------------
+      # Automatically generates image tags based on what
+      # triggered the workflow.
+      #
+      # On push to main:
       #   ghcr.io/scopielala/naija-learn:latest
       #   ghcr.io/scopielala/naija-learn:sha-abc1234
       #
-      # For a git tag push (v1.0.0) it also generates:
+      # On git tag push (v1.0.0):
+      #   ghcr.io/scopielala/naija-learn:latest
+      #   ghcr.io/scopielala/naija-learn:sha-abc1234
       #   ghcr.io/scopielala/naija-learn:v1.0.0
-      #   ghcr.io/scopielala/naija-learn:1.0.0
+      #   ghcr.io/scopielala/naija-learn:1.0
       #
-      # id: meta — gives this step a name so later steps
-      # can reference its outputs using ${{ steps.meta.outputs.* }}
+      # id: meta — allows later steps to use the generated
+      # tags via ${{ steps.meta.outputs.tags }}
       # ---------------------------------------------------------
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
-          # The image name on GHCR
-          # ghcr.io/scopielala/naija-learn
-          images: ghcr.io/${{ github.repository }}
+          # Use the lowercase image name from Step 2
+          images: ${{ steps.image.outputs.name }}
 
           tags: |
-            # Always tag as latest on main branch pushes
+            # Tag as "latest" on every push to main branch
+            # enable={{is_default_branch}} means only on main
+            # not on git tag pushes to other branches
             type=raw,value=latest,enable={{is_default_branch}}
 
-            # Tag with short commit SHA
+            # Tag with short commit SHA for traceability
+            # Lets you know exactly which commit is deployed
             # e.g. sha-abc1234
             type=sha,prefix=sha-
 
-            # Tag with semantic version when a git tag is pushed
-            # e.g. v1.0.0 becomes tags: v1.0.0 and 1.0.0
+            # Tag with full semantic version from git tag
+            # Only applies when a v*.*.* tag is pushed
+            # e.g. v1.0.0 → tag: v1.0.0
             type=semver,pattern={{version}}
+
+            # Tag with major.minor version from git tag
+            # e.g. v1.0.0 → tag: 1.0
             type=semver,pattern={{major}}.{{minor}}
 
       # ---------------------------------------------------------
-      # STEP 3 — Set Up Docker Buildx
+      # STEP 4 — Set Up Docker Buildx
       # ---------------------------------------------------------
-      # Buildx is Docker's extended build tool.
-      # It enables:
-      # - Multi-platform builds (arm64 for Apple Silicon etc)
-      # - Better caching
-      # - Faster builds
-      #
-      # We set it up even if we only build for one platform
-      # because it gives us access to better caching options.
+      # Buildx is Docker's extended build capability.
+      # Enables better layer caching and multi-platform builds.
+      # Must be set up before building the image.
       # ---------------------------------------------------------
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       # ---------------------------------------------------------
-      # STEP 4 — Login to GHCR
+      # STEP 5 — Login to GHCR
       # ---------------------------------------------------------
       # Authenticates Docker to push images to GHCR.
       #
-      # registry: ghcr.io → GitHub Container Registry
-      # username: github.actor → the GitHub user running the workflow
-      #           this is automatically set by GitHub
-      # password: secrets.GHCR_TOKEN → the Personal Access Token
-      #           we created and stored as a GitHub Secret
-      #           secrets.GHCR_TOKEN reads from repo secrets
-      #           the actual token value is never visible in logs
+      # registry: ghcr.io
+      #   GitHub Container Registry endpoint
+      #
+      # username: github.actor
+      #   The GitHub username running this workflow
+      #   Set automatically by GitHub — no hardcoding needed
+      #
+      # password: secrets.GHCR_TOKEN
+      #   The Personal Access Token we stored as a repo secret
+      #   GitHub encrypts this — never visible in logs
+      #   GitHub masks it with *** if it appears in output
       # ---------------------------------------------------------
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
@@ -124,31 +150,38 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       # ---------------------------------------------------------
-      # STEP 5 — Build and Push Docker Image
+      # STEP 6 — Build and Push Docker Image
       # ---------------------------------------------------------
       # Builds the Docker image using our Dockerfile and
-      # pushes it to GHCR in one step.
+      # pushes all generated tags to GHCR in one step.
       #
-      # context: . → build from the current directory
-      #              (the root of the repo)
+      # context: .
+      #   Build from the repo root — where Dockerfile is
       #
-      # file: Dockerfile → use our Dockerfile explicitly
+      # file: Dockerfile
+      #   Explicit path to our Dockerfile
       #
-      # push: true → push to GHCR after building
-      #              set to false if you only want to build
-      #              without pushing (useful for testing)
+      # push: true
+      #   Push to GHCR after building
+      #   Set false to build without pushing (for testing)
       #
-      # tags: steps.meta.outputs.tags → use all the tags
-      #        generated by the metadata step above
+      # tags: steps.meta.outputs.tags
+      #   All tags generated by the metadata step
+      #   Could be 2 tags (main push) or 4 tags (git tag push)
       #
-      # labels: steps.meta.outputs.labels → add standard
-      #          OCI labels to the image (author, version etc)
+      # labels: steps.meta.outputs.labels
+      #   Standard OCI image labels — author, version, source
+      #   Makes the image self-describing on GHCR
       #
-      # cache-from / cache-to → Docker layer caching
-      #   Stores build cache on GHCR so subsequent builds
-      #   reuse unchanged layers — much faster builds
-      #   First build: 3-5 minutes
-      #   Subsequent builds: 30-60 seconds (unchanged layers cached)
+      # cache-from / cache-to
+      #   Stores Docker layer cache on GHCR itself
+      #   labeled with :buildcache tag
+      #
+      #   First build:  3-5 minutes (downloads everything)
+      #   Later builds: 30-60 seconds (reuses cached layers)
+      #
+      #   mode=max caches ALL layers including intermediate ones
+      #   gives maximum cache benefit on subsequent builds
       # ---------------------------------------------------------
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -158,5 +191,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}:buildcache
-          cache-to: type=registry,ref=ghcr.io/${{ github.repository }}:buildcache,mode=max
+          cache-from: type=registry,ref=${{ steps.image.outputs.name }}:buildcache
+          cache-to: type=registry,ref=${{ steps.image.outputs.name }}:buildcache,mode=max
