@@ -1,0 +1,6 @@
+Naija Learn TODO
+1. Update README with live URLs
+2. Update CONTRIBUTING.md with Docker setup
+3. Share the live URL publicly
+4. Write a development article on Hashnode
+5. Do research on why sliding down on the browser to refresh writes a 404 error.

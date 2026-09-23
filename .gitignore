@@ -19,3 +19,5 @@ alembic/versions/*.pyc
 # IDE
 .vscode/
 .idea/
+
+DOCKER_ACCESS_TOKEN.txt
