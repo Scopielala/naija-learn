@@ -24,19 +24,7 @@ ENV PYTHONUNBUFFERED=1
 # -------------------------------------------------------------
 # SYSTEM DEPENDENCIES
 # -------------------------------------------------------------
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    curl \
-    ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
-
-
-# -------------------------------------------------------------
-# INSTALL UV
-# -------------------------------------------------------------
-RUN curl -LsSf https://astral.sh/uv/install.sh \
-    | UV_INSTALL_DIR=/usr/local/bin sh
-
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 # -------------------------------------------------------------
 # WORKING DIRECTORY

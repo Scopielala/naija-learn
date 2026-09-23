@@ -114,7 +114,7 @@ def build_prompt(
     content_type options: "notes", "summary", "questions"
     """
     builders = {
-        "notes": build_notes_prompt,
+        "notes": build_notes_prompt, 
         "summary": build_summary_prompt,
         "questions": build_questions_prompt,
     }
